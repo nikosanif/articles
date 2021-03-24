@@ -4,12 +4,12 @@
 
 When we create a new Angular project, by default Angular CLI creates two environment files for `development` and `production`.
 
-But in real world software development workflow, we may need more custom environments. Moreover, there are some environmental variables that are common between these environments. For example, API URL to fetch data from server.
+But in real world software development workflow, we may need more custom environments (e.g. `staging`, `qa`). Moreover, there are some environmental variables that are common between these environments. For example, API URL to fetch data from server. Thus, we must find a way to share the base settings across all environments and override them as needed.
 
 In this article, we are going to learn:
 
-- How to add custom environments (e.g. `staging`)
-- How we can share some common variables between environments
+- How to add **custom** environments (e.g. `staging`)
+- How we can share some **common** settings between environments
 
 ## Create a custom environment 💎
 
@@ -118,8 +118,6 @@ export const environment = {
 };
 ```
 
-> ❗ **Attention**
->
 > In this example, the common settings is not a real problem, since there is only one shared value between the existing environments.
 >
 > But... Imagine a real world Angular project which has at least 4-5 environments and a bunch of settings that developers have to maintain. This is really a problem, believe me... 😟😥
@@ -208,7 +206,7 @@ We use the `Object.assign()` method that allows you to copy all enumerable own p
 There is one more extremely useful trick here to preserve typings with typescript.
 We use `Partial<typeof commonEnv>` in order to help us to track the properties of the common environment and override them correctly.
 
-## Use environment settings inside project
+## Use environment settings inside project ✨
 
 Great! We have created multiple environments and now is time to use them in our project.
 
@@ -245,25 +243,35 @@ import { environment } from "src/environments/environment.staging";
 import { environment } from "src/environments/environment";
 ```
 
-> 🔖 **Advanced Tip**
+> ❗ **Attention**
 >
 > We saw how to import environment settings in our project...
-> But you should NOT import them directly at your components or services.
+> But it's **NOT** good idea to import them directly at your components or services.
 >
 > I suggest to create a new Angular service (e.g. `ConfigService`) and handle all settings from there by injecting it in your components.
-> Thus, you will have cleaner and more maintainable code.
+> Thus, you will have a cleaner and more maintainable code.
 
-## Run/Build your project
+## Run/Build your project 📦
 
-TODO
+We are reaching the end, the hard work is done!
+Now it's time to run and build your application for targeted environment by specific `--configuration` parameter with Angular CLI.
 
-## Conclusion
+In order to build our application in `staging` mode, run one of the following commands:
 
-TODO
+```sh
+# Builds and serves your app, rebuilding on file changes.
+$ ng serve --configuration staging
+```
 
-<!--
-Useful Links:
-https://balramchavan.medium.com/configure-and-build-angular-application-for-different-environments-7e94a3c0af23
-https://medium.com/@onlyyprasanth/how-to-manage-multiple-environments-with-angular-cli-angular-2-to-5-aa68d557fa77
+```sh
+# Compiles an Angular app into an output directory
+$ ng build --configuration staging
+```
 
-https://gist.github.com/rxaviers/7360908 -->
+## Conclusion ✅
+
+Hooray! We’re done!
+
+I hope you enjoyed this guide and will make your applications even more clean and maintainable by splitting environments to separate reusable configuration files! This approach can help in an excellent way in the enterprise organization setting!
+
+Please support this article with your ❤️ 🦄🔖 to help it spread to a wider audience 🙏.
