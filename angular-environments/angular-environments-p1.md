@@ -157,7 +157,6 @@ const env: Partial<typeof commonEnv> = {};
 
 // Export all settings of common replaced by dev options
 export const environment = Object.assign(commonEnv, env);
-export const production = false;
 ```
 
 But, for `production` and `staging` we have to override some settings from the base.
@@ -174,7 +173,6 @@ const env: Partial<typeof commonEnv> = {
 
 // Export all settings of common replaced by dev options
 export const environment = Object.assign(commonEnv, env);
-export const production = true;
 ```
 
 ```ts
@@ -189,7 +187,6 @@ const env: Partial<typeof commonEnv> = {
 
 // Export all settings of common replaced by dev options
 export const environment = Object.assign(commonEnv, env);
-export const production = true;
 ```
 
 We use the `Object.assign()` method that allows you to copy all enumerable own properties from one or more source objects to a target object, and return the target object.
@@ -208,11 +205,53 @@ We use the `Object.assign()` method that allows you to copy all enumerable own p
 > export const environment = _.merge(commonEnv, env);
 > ```
 
-There is one more extremely useful trick here to preserve typings with typescript. We use `Partial<typeof commonEnv>` in order to help us to track the properties of the common environment and override them correctly.
+There is one more extremely useful trick here to preserve typings with typescript.
+We use `Partial<typeof commonEnv>` in order to help us to track the properties of the common environment and override them correctly.
 
 ## Use environment settings inside project
 
-TODO
+Great! We have created multiple environments and now is time to use them in our project.
+
+You can import environment settings in your services/components like the following example:
+
+```ts
+import { Component } from "@angular/core";
+import { environment } from "src/environments/environment"; // here is the import
+
+@Component({
+  selector: "app-root",
+  templateUrl: "./app.component.html",
+  styleUrls: ["./app.component.css"],
+})
+export class AppComponent {
+  private apiUrl: string;
+
+  constructor() {
+    this.apiUrl = environment.apiUrl;
+    // ...
+  }
+}
+```
+
+Please be careful! **Don't import** your settings from the direct environment file!
+
+For example:
+
+```ts
+// DO NOT
+import { environment } from "src/environments/environment.staging";
+
+// DO
+import { environment } from "src/environments/environment";
+```
+
+> 🔖 **Advanced Tip**
+>
+> We saw how to import environment settings in our project...
+> But you should NOT import them directly at your components or services.
+>
+> I suggest to create a new Angular service (e.g. `ConfigService`) and handle all settings from there by injecting it in your components.
+> Thus, you will have cleaner and more maintainable code.
 
 ## Run/Build your project
 
