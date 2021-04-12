@@ -31,6 +31,7 @@ $ npm i -D prettier
 ```
 
 Now let's add some configuration files that specify rules and ignore files from prettier formatting.
+
 In your project at root directory create two files with names `.prettierrc` and `.prettierignore`.
 
 ```sh
@@ -95,9 +96,9 @@ In order to ensure that husky is going to be initialized each time that you inst
 }
 ```
 
-## TODO
+## Setup Git Hooks :twisted_rightwards_arrows:
 
-Awesome, you made it so far! Let's combine them together. :smirk:
+Awesome, you made it so far! Let's combine them together and setup our project. :smirk:
 
 It's time to add some scripts for:
 
@@ -110,7 +111,7 @@ Install all the required dev-dependencies, by running:
 $ npm i -D @commitlint/cli @commitlint/config-conventional pretty-quick
 ```
 
-TODO
+Open your project and create a new file with name `commitlint.config.js` under the root folder. Then copy/paste commitlint configuration in your new file as depicted below.
 
 ```js
 // commitlint.config.js
@@ -120,11 +121,13 @@ module.exports = {
 };
 ```
 
-TODO
+The next step is to tell Husky what command to execute on which Git Hook action. Create two files under the `.husky` folder with names `commit-msg` and `pre-commit`.
 
-![husky-install](./assets/husky-hooks.png)
+![husky-hooks](./assets/husky-hooks.png)
 
-TODO
+In order to validate commit messages on commit-msg Git Hook, we use **commitlint** command. This action allows us to verify if the new commit message meets the requirements of Conventional Commits specification.
+
+If the commit message does not follow the rules, it will not allow us to commit our new code.
 
 ```sh
 # commit-msg
@@ -135,7 +138,9 @@ TODO
 npx --no-install commitlint --edit $1
 ```
 
-TODO
+The second action that we want to achieve is to format our code automatically before we commit our code to the repository. We use **pretty-quick** command to format our code depending on the defined configuration that we have specified.
+
+Also, we use `--staged` command flag to format only those files that are changed in our new commit.
 
 ```sh
 # pre-commit
@@ -146,13 +151,23 @@ TODO
 npx --no-install pretty-quick --staged
 ```
 
-TODO
+**_[Optional]_** As final step, I recommend to install the Conventional Commits official plugin in your VS Code. It will help you to write structured commit messages through a step-by-step form without having to memorize all the rules.
+
+Open "Quick Open" (`CMD`/`CTRL` + `P`), paste the following command, and press enter.
 
 ```
 ext install vivaxy.vscode-conventional-commits
 ```
 
-## Install Standard Version
+Once you have installed the plugin, open "Source Control" panel and click on the "circle" icon button at the top. A panel will appear and will guide you to write your commit message.
+
+![vs-code-plugin](./assets/vs-code-plugin.png)
+
+> 🔖 **Tip**
+>
+> Although it may seem like a tedious process at first, it will help a lot and over time you will get used to it very easily writing well structured commit messages. :wink:
+
+## Install Standard Version :package:
 
 ```sh
 $ npm i -D standard-version
@@ -191,3 +206,5 @@ $ npm run release -- --dry-run
 ✔ tagging release v1.0.0
 ℹ Run `git push --follow-tags origin master` to publish
 ```
+
+## Conclusion :white_check_mark:
