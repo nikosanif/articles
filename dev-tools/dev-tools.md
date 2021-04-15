@@ -1,8 +1,21 @@
 # Awesome Dev Tools for Node.js Repositories :fire:
 
-## Introduction
+## Introduction :thinking:
 
-TODO
+Automation is awesome! It allows us to increase our productivity and achieve more in shorter amount of time. Thus, this article will teach you step-by-step how to install and use tools that automate processes which leave our limited attention span to focus on solving real challenges!
+
+More specifically, **we are going to learn how to**:
+
+- Format automatically our source code, following rules with unique style
+- Build meaningful commit messages
+- Take advantage of the power of Git Hooks
+- Force our repository to accept only specific structure of commits
+- Ensure that new source code will be committed properly formatted
+- Automate new releases, generating automatically versions, changelogs, Git tags, etc.
+
+> This article refers to any git repository with `Node.js`, including `Angular`, `React.JS`, `Vue.js`.
+
+## Prerequisites :zap:
 
 - **[Prettier](https://prettier.io/)** constitutes an opinionated code formatter which supports many languages and integrations with most code editors. It allow us to format automatically our code on save saving time and making sure our code have only one, unique and clean format style.
 
@@ -105,7 +118,7 @@ It's time to add some scripts for:
 - commit message validation that meet conventional commit format
 - format with prettier the changed files before committing new code
 
-Install all the required dev-dependencies, by running:
+Install all the required _dev-dependencies_, by running:
 
 ```sh
 $ npm i -D @commitlint/cli @commitlint/config-conventional pretty-quick
@@ -163,15 +176,42 @@ Once you have installed the plugin, open "Source Control" panel and click on the
 
 ![vs-code-plugin](./assets/vs-code-plugin.png)
 
-> 🔖 **Tip**
+> :bookmark: **Tip**
 >
 > Although it may seem like a tedious process at first, it will help a lot and over time you will get used to it very easily writing well structured commit messages. :wink:
 
 ## Install Standard Version :package:
 
+Before we proceed with the installation, let's do a small recap. At the previous step, we saw how to format commit messages and how to enforce validation of them with Git Hooks.
+
+So, our commits look like this:
+
+```
+- feat(ui): add avatar component for users
+- style(ui): add roundness at avatar component
+- chore: update lodash to 4.17.21
+- feat(layout): add navigation links at header
+- fix(auth): pass valid token at authentication process
+```
+
+Although it's totally the best practice to follow specific message convention for your commits, it's also **the only requirement** to be able to fully use the `standard-version` package.
+
+In brief, `standard-version` undertakes to:
+
+- Change versions at `package.json` and `package-lock.json` files
+- Track changes from your commits and generate/update automatically `CHANGELOG.md`
+- Commit changed files
+- Create appropriate tags with versions at your repository
+
+To install standard-version run:
+
 ```sh
 $ npm i -D standard-version
 ```
+
+Then, let's create three scripts at our project. According to [semver](https://semver.org/), we create one script for each version number (MAJOR.MINOR.PATCH).
+
+Update your `package.json` file like:
 
 ```json
 // package.json
@@ -189,17 +229,32 @@ $ npm i -D standard-version
 }
 ```
 
+Once you write some code and create 2-3 commits, try to run the following command:
+
 ```sh
 $ npm run release -- --dry-run
 ```
 
-```sh
+> We use the `--dry-run` command flag to demonstrate what commands would be run, without committing to git or updating files.
+>
+> During your official release just run: `npm run release`
+
+You will get an output similar to this:
+
+```
 ✔ bumping version in package.json from 0.0.0 to 1.0.0
 ✔ bumping version in package-lock.json from 0.0.0 to 1.0.0
 ✔ outputting changes to CHANGELOG.md
 
 ---
-# ... changelog here
+### Features
+
+* **ui:** add avatar component for users (...)
+* **layout:** add navigation links to header (...)
+
+### Fixes
+
+* **auth:** pass valid token at authentication process (...)
 ---
 
 ✔ committing package-lock.json and package.json and CHANGELOG.md
@@ -207,4 +262,17 @@ $ npm run release -- --dry-run
 ℹ Run `git push --follow-tags origin master` to publish
 ```
 
+You have created a new release version for your project. :clap:
+
+> Keep in mind that you have a ton of options to customize according to your needs from the official documentation.
+
 ## Conclusion :white_check_mark:
+
+Hooray! We made it to the end! :raised_hands:
+
+I hope you enjoyed this article and boost your projects with some magic.
+All aforementioned tools can help you to enrich the endless automation possibilities in an excellent way and make you and your team even more productive!
+
+Please support this article with your :heart: :unicorn: :bookmark: to help it spread to a wider audience. :pray:
+
+Also, don’t hesitate to contact me if you have any questions leaving here your comments or Twitter DMs [@nikosanif](https://twitter.com/nikosanif).
