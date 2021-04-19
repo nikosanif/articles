@@ -1,4 +1,4 @@
-# Awesome Dev Tools for Node.js Repositories :fire:
+# Awesome Dev Tools To Automate Code Tasks 🔥
 
 ## Introduction :thinking:
 
@@ -9,11 +9,11 @@ More specifically, **we are going to learn how to**:
 - Format automatically our source code, following rules with unique style
 - Build meaningful commit messages
 - Take advantage of the power of Git Hooks
-- Force our repository to accept only specific structure of commits
-- Ensure that new source code will be committed properly formatted
-- Automate new releases, generating automatically versions, changelogs, Git tags, etc.
+- Force our repository to accept specific structure of commits
+- Ensure that source code will be committed properly formatted
+- Automate new releases, generating versions, changelogs, Git tags, etc.
 
-> This article refers to any git repository with `Node.js`, including `Angular`, `React.JS`, `Vue.js`.
+> This article refers to any Git repository with `Node.js`, including `Angular`, `React.JS`, etc.
 
 ## Prerequisites :zap:
 
@@ -276,3 +276,5 @@ All aforementioned tools can help you to enrich the endless automation possibili
 Please support this article with your :heart: :unicorn: :bookmark: to help it spread to a wider audience. :pray:
 
 Also, don’t hesitate to contact me if you have any questions leaving here your comments or Twitter DMs [@nikosanif](https://twitter.com/nikosanif).
+
+<sup>_Cover Photo by [rhondak](https://unsplash.com/@rhondak) on [Unsplash](https://unsplash.com/)._</sup>

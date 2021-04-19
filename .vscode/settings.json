@@ -1,5 +1,3 @@
 {
-  "conventionalCommits.scopes": [
-    "angular-env"
-  ]
+  "conventionalCommits.scopes": ["dynamic-height", "angular-env", "dev-tools"]
 }
