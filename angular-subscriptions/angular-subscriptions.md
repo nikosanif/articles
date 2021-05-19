@@ -24,7 +24,6 @@ Let me elaborate a bit on this, explaining a memory leak issue by an example. Be
 
 ```ts
 @Component(/* ... */)
-)
 export class ProblematicExampleComponent implements OnInit {
   constructor() {}
 
@@ -328,4 +327,4 @@ Also, don’t hesitate to contact me if you have any questions leaving here your
 
 {% stackblitz angular-ivy-crdui2 %}
 
-TODO: add cover image source links
+<sup>_Cover Photo by [Ali Kazal](https://unsplash.com/@lureofadventure?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/)._</sup>
