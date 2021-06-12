@@ -3,6 +3,7 @@
     "dynamic-height",
     "angular-env",
     "dev-tools",
-    "angular-subscriptions"
+    "angular-subscriptions",
+    "timeout-promise"
   ]
 }
