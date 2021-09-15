@@ -4,6 +4,7 @@
     "angular-env",
     "dev-tools",
     "angular-subscriptions",
-    "timeout-promise"
+    "timeout-promise",
+    "angular-generic-services-models"
   ]
 }
