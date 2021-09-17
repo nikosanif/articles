@@ -6,5 +6,12 @@
     "angular-subscriptions",
     "timeout-promise",
     "angular-generic-services-models"
-  ]
+  ],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.markdownlint": false
+  },
+  "markdownlint.config": {
+    "MD026": false,
+    "MD033": false
+  }
 }
