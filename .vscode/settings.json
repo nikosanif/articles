@@ -13,5 +13,21 @@
   "markdownlint.config": {
     "MD026": false,
     "MD033": false
+  },
+  "workbench.colorCustomizations": {
+    "activityBar.background": "#3642cc",
+    "activityBar.activeBackground": "#232c88",
+    "activityBar.activeBorder": "#d2bae4",
+    "activityBar.foreground": "#e7e7e7",
+    "activityBar.inactiveForeground": "#e7e7e799",
+    "activityBarBadge.background": "#d2bae4",
+    "activityBarBadge.foreground": "#15202b",
+    "titleBar.activeBackground": "#323ebe",
+    "titleBar.inactiveBackground": "#323ebe99",
+    "titleBar.activeForeground": "#e7e7e7",
+    "titleBar.inactiveForeground": "#e7e7e799",
+    "statusBar.background": "#323ebe",
+    "statusBarItem.hoverBackground": "#2933a1",
+    "statusBar.foreground": "#e7e7e7"
   }
 }
