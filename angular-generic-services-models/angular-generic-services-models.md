@@ -149,7 +149,7 @@ function getFirstItemOfArray(items: NonEmptyArray<T>): T {
 
 Starting from the acronym, CRUD means create, read, update, and delete. These are the four main functionalities that must be provided by all models when building APIs.
 
-Let's see an example to see it in action. In this article we will the example of `User` which is very common to most of real world applications. We simplify the model with the following properties:
+Let's see an example to see it in action. In this article we will examine the example of `User` which is very common to most of real world applications. We simplify the model with the following properties:
 
 ```json
 {
@@ -184,6 +184,82 @@ Let's see an example to see it in action. In this article we will the example of
 | Operation | Endpoint          | Status Code      |
 | --------- | ----------------- | ---------------- |
 | `DELETE`  | `/api/users/{id}` | 204 (No Content) |
+
+## Generic CRUD Model
+
+```ts
+export class ResourceModel<T> {
+  public id?: number;
+  public createdAt?: Date;
+  public updatedAt?: Date;
+
+  constructor(model?: Partial<T>) {
+    if (model) {
+      Object.assign(this, model);
+    }
+    if (this.createdAt) {
+      this.createdAt = new Date(this.createdAt);
+    }
+    if (this.updatedAt) {
+      this.updatedAt = new Date(this.updatedAt);
+    }
+  }
+
+  public toJSON(): any {
+    return JSON.parse(JSON.stringify(this));
+  }
+}
+```
+
+## Generic CRUD Service
+
+```ts
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+
+import { ResourceModel } from '@turintech/shared/data-access/models';
+
+export abstract class ResourceService<T extends ResourceModel<T>> {
+  constructor(
+    private httpClient: HttpClient,
+    private tConstructor: { new (m: Partial<T>, ...args: unknown[]): T },
+    protected apiUrl: string
+  ) {}
+
+  public create(resource: Partial<T> & { toJSON: () => T }): Observable<T> {
+    return this.httpClient
+      .post<T>(`${this.apiUrl}`, resource.toJSON())
+      .pipe(map((result) => new this.tConstructor(result)));
+  }
+
+  public get(): Observable<T[]> {
+    return this.httpClient
+      .get<T[]>(`${this.apiUrl}`)
+      .pipe(map((result) => result.map((i) => new this.tConstructor(i))));
+  }
+
+  public getById(id: string): Observable<T> {
+    return this.httpClient
+      .get<T>(`${this.apiUrl}/${id}`)
+      .pipe(map((result) => new this.tConstructor(result)));
+  }
+
+  public update(resource: Partial<T> & { toJSON: () => T }): Observable<T> {
+    return this.httpClient
+      .put<T>(`${this.apiUrl}/${resource._id}`, resource.toJSON())
+      .pipe(map((result) => new this.tConstructor(result)));
+  }
+
+  public delete(id: string): Observable<void> {
+    return this.httpClient.delete<void>(`${this.apiUrl}/${id}`);
+  }
+}
+```
+
+## Bonus - Generic CRUD Service w/ Pagination
+
+@TODO
 
 ## References
 
