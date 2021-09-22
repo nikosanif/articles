@@ -2,14 +2,14 @@
 
 ## Introduction
 
-In this article, we will see step-by-step how to create generic models and services regarding the CRUD feature of resources in Angular.
+In this article, we are going to learn how to create generic models and services step-by-step regarding the CRUD feature of resources in Angular.
 
 In a nutshell, we're going to learn:
 
 - How to use generics in Typescript
 - What is CRUD operations
-- How to create generic models in Angular?
-- How to create generic service for CRUD in Angular?
+- How to create generic models in Angular
+- How to create generic service for CRUD in Angular
 
 ## The Problem :thinking:
 
@@ -29,11 +29,12 @@ Generics are awesome! It allows us to keep our code clean and reusable avoiding 
 
 #### :arrow_right: Example 1 - Type-Safe Generics
 
-The first example that we will see, presents a method where it takes as arguments 2 parameters and returns an object with them. It is a very simple method but with powerful types.
+The first example that we will see, presents a method where it takes as arguments 2 parameters and returns an object based on them. It is a very simple method but with powerful types.
 
-As we can see below, we use `T` and `U` as generic types which enforces both the arguments and the returned type to be the same type. If we pass as first argument a value of type `string`, we are able to know that the property `value1` of the result will be `string` as well. Maybe it looks like dummy but imagine a real world example.
+As you can see below, we use `T` and `U` as generic types which enforces both arguments and returned type to be the same type.
+If we pass as first argument a value of type `string`, we are able to know that the property `value1` of the result will be `string` as well. Maybe it looks like a little bit dummy but imagine a real world example (e.g. the main topic of this article).
 
-Furthermore, if we look the following example closer, we can pre-define the returned object by adding `objectify<string, number>(...)`. Thus, we enforce the first argument to be of type `string` and the second one of type `number`. If we try to pass a different type (e.g boolean), then we'll have a type error.
+Furthermore, if we look the following example closer, we can predefine the returned object by adding `objectify<string, number>(...)`. Thus, we enforce the first argument to be of type `string` and the second of type `number`. If we try to pass a different type (e.g boolean), then we'll have a type error.
 
 ```ts
 function objectify<T, U>(value1: T, value2: U): { value1: T; value2: U } {
@@ -49,9 +50,9 @@ console.log(obj2); // Output: { value1: 10, value2: true }
 
 #### :arrow_right: Example 2 - Generic Classes
 
-The second example concerns `class`-es. Yes, classes! Generics work not only with functions but for `class`, `interface` even `type`. In this example, we will create a custom class implementing the array functionality. It can be initialized by a given array of items, we can add new item and get all items.
+The second example concerns `class`-es. Yes, classes! Generics work not only with functions but for `class`, `interface`, even `type`. In this example, we will create a custom class implementing a simple functionality of array. It can be initialized by a given array of items, add new item, and get all items.
 
-We use `T` as generic type to declare the type of the stored items in our custom class. Thus, we ensure that all items will be the same type. For example, if we add the following `new MyCustomArray<number>(...)`, we restrict our instance to accept only values of type `number` at `addItem()` method. Also, we can infer that the `getItems()` method will return a list of values of type `number`.
+We use `T` as generic type to declare the type of the stored items in our custom class. Thus, we ensure that all items will be the same type. For example, if we add the following `new MyCustomArray<number>()`, we restrict our instance to accept only values of type `number` at `addItem()` method. Also, we can infer that the `getItems()` method will return a list of values of type `number`.
 
 ```ts
 class MyCustomArray<T> {
@@ -100,7 +101,7 @@ console.log(result2); // Output: 10
 
 #### :arrow_right: Example 4 - Bonus
 
-We have succeeded so far! Let's see a bonus example!
+We have succeeded so far! Let's see a bonus example in action with VSCode!
 
 Let's create an `Animal` interface that can be extended by a `Cat`. But, the `Cat` can only have 2 colors - white or black (no grey zone here :laughing:).
 
@@ -119,7 +120,7 @@ When we are trying to create an object of type `Cat`, the editor will help us by
 
 ![Initialize cat type](./assets/cat-1.png)
 
-Now, let's create a black cat (I hope this does not mean but luck for this article :sweat:). As you can see, we have set the generic type to `black` with `Cat<'black'>` and the editor give us as the only option to set `color: 'black'`.
+Now, let's create a black cat (I hope this does not mean bad luck for this article :sweat:). As you can see, we have set the generic type to `black` with `Cat<'black'>` and the editor give us as the only option to set `color: 'black'`.
 
 ![Set color property of cat type](./assets/cat-2.png)
 
