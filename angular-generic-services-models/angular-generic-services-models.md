@@ -157,7 +157,9 @@ Let's see an example to see it in action. In this article we will examine the ex
   "id": 1,
   "firstName": "John",
   "lastName": "Doe",
-  "email": "nikos@email.com"
+  "email": "nikos@email.com",
+  "createdAt": "2021-09-22T16:21:47.760Z",
+  "updatedAt": "2021-09-22T16:21:47.851Z"
 }
 ```
 
