@@ -142,6 +142,8 @@ Now, let's create a black cat (I hope this does not mean bad luck for this artic
 
 ![Set color property of cat type](./assets/cat-2.png)
 
+Final model:
+
 ```ts
 const myCat: Cat<'black'> = {
   color: 'black',
@@ -177,3 +179,9 @@ const first3 = getFirstItemOfArray(null);
 
 - [Typescript Generics](https://www.typescriptlang.org/docs/handbook/2/generics.html)
 - [How To Use Generics in TypeScript](https://www.digitalocean.com/community/tutorials/typescript-generics-in-typescript)
+
+Author: Nikos Anifantis ✍️
+
+[![Twitter](https://img.shields.io/twitter/url/https/twitter.com/nikosanif.svg?style=social&label=Follow%20nikosanif)](https://twitter.com/nikosanif) [![LinkedIn](https://img.shields.io/badge/LinkedIn-blue?style=social&style=flat&logo=linkedin&labelColor=blue&label=Connect%20Nikos%20Anifantis)](https://www.linkedin.com/in/nikosanifantis/)
+
+<sup>_Cover Photo by [Eugenio Mazzone](https://unsplash.com/@eugi1492?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/)._</sup>
