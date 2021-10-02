@@ -1,4 +1,4 @@
-# Generic CRUD Service & Models: Part 1 - Understanding Generics
+# Generic CRUD Service in Angular: Part 1 - Understanding Generics
 
 <sup>_Cover Photo by [Eugenio Mazzone](https://unsplash.com/@eugi1492?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/)._</sup>
 
