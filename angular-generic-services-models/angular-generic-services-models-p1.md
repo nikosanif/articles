@@ -1,5 +1,7 @@
 # Generic CRUD Service & Models: Part 1 - Understanding Generics
 
+<sup>_Cover Photo by [Eugenio Mazzone](https://unsplash.com/@eugi1492?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/)._</sup>
+
 This article is a part of a series about how to create **Generic CRUD Service & Models in Angular**:
 
 - :point_right: **Part 1 - Understanding Generics**
@@ -183,5 +185,3 @@ const first3 = getFirstItemOfArray(null);
 Author: Nikos Anifantis ✍️
 
 [![Twitter](https://img.shields.io/twitter/url/https/twitter.com/nikosanif.svg?style=social&label=Follow%20nikosanif)](https://twitter.com/nikosanif) [![LinkedIn](https://img.shields.io/badge/LinkedIn-blue?style=social&style=flat&logo=linkedin&labelColor=blue&label=Connect%20Nikos%20Anifantis)](https://www.linkedin.com/in/nikosanifantis/)
-
-<sup>_Cover Photo by [Eugenio Mazzone](https://unsplash.com/@eugi1492?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/)._</sup>
