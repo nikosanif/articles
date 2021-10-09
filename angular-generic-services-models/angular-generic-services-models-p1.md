@@ -5,7 +5,7 @@
 This article is a part of a series about how to create **Generic CRUD Service & Models in Angular**:
 
 - :point_right: **Part 1 - Understanding Generics**
-- Part 2 - What is CRUD? _(coming soon...)_
+- [Part 2 - What is CRUD?](https://dev.to/nikosanif/generic-crud-service-in-angular-part-2-what-is-crud-30ek)
 - Part 3 - Generic CRUD Model _(coming soon...)_
 - Part 4 - Generic CRUD Service in Angular _(coming soon...)_
 
@@ -28,7 +28,7 @@ For example, let's say that we have two models in our app, "article" and "author
 
 ## Understanding Generics
 
-First things first! Before we start to analyze our main content, we must understand how does generics work in Typescript and the definition of CRUD in APIs (Part 2).
+First things first! Before we start to analyze our main content, we must understand how does generics work in Typescript and the definition of CRUD in APIs ([Part 2](https://dev.to/nikosanif/generic-crud-service-in-angular-part-2-what-is-crud-30ek)).
 
 Generics are awesome! It allows us to keep our code clean and reusable avoiding duplications. I believe that whoever has used it with Typescript, loves it. The rest of you will love it after this article :laughing:.
 
@@ -175,7 +175,7 @@ const first3 = getFirstItemOfArray(null);
 
 ## What's next?
 
-- **Part 2 - What is CRUD?** _(coming soon...)_
+- [**Part 2 - What is CRUD?**](https://dev.to/nikosanif/generic-crud-service-in-angular-part-2-what-is-crud-30ek)
 
 ## References
 

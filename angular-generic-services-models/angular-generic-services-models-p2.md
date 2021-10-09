@@ -1,10 +1,10 @@
 # Generic CRUD Service in Angular: Part 2 - What is CRUD?
 
-<sup>_Cover Photo by [Tobias Fischer](https://unsplash.com/@tofi?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](TODO)._</sup>
+<sup>_Cover Photo by [Tobias Fischer](https://unsplash.com/@tofi?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/)._</sup>
 
 This article is a part of a series about how to create **Generic CRUD Service & Models in Angular**:
 
-- [Part 1 - Understanding Generics](TODO)
+- [Part 1 - Understanding Generics](https://dev.to/nikosanif/generic-crud-service-in-angular-part-1-understanding-generics-2n75)
 - :point_right: **Part 2 - What is CRUD?**
 - Part 3 - Generic CRUD Model _(coming soon...)_
 - Part 4 - Generic CRUD Service in Angular _(coming soon...)_
