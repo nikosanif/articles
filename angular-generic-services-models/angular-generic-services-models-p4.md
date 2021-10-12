@@ -1,8 +1,21 @@
-# How To Create Generic CRUD Service & Models In Angular - Part 4
+# Generic CRUD Service in Angular
+
+<sup>_Cover Photo by [Xan Griffin](https://unsplash.com/@xangriffin?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/)._</sup>
+
+This article is a part of a series about how to create **Generic CRUD Service & Models in Angular**:
+
+- [Part 1 - Understanding Generics](https://dev.to/nikosanif/generic-crud-service-in-angular-part-1-understanding-generics-2n75)
+- [Part 2 - What is CRUD?](https://dev.to/nikosanif/generic-crud-service-in-angular-part-2-what-is-crud-30ek)
+- [Part 3 - Generic CRUD Model](https://dev.to/nikosanif/generic-crud-service-in-angular-part-3-generic-crud-model-2hl)
+- :point_right: **Part 4 - Generic CRUD Service in Angular**
 
 ## Generic CRUD Service
 
-Before we start generating and writing code, let’s take a step back and see the bigger picture. The generic service should accept the following arguments: the `HttpClient` is used for the HTTP requests, the class of model for object casting, and the path of the API endpoints.
+Before we start generating and writing code, let’s take a step back and see the bigger picture. The generic service should accept the following arguments:
+
+- the `HttpClient` is used for the HTTP requests
+- the class of model for creating instances
+- the path of the API endpoints.
 
 Also, all resources should have 5 main methods related to CRUD…
 
@@ -83,7 +96,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { ResourceModel } from '@turintech/shared/data-access/models';
+import { ResourceModel } from 'your-path-to-model'; // see: Part 3
 
 export abstract class ResourceService<T extends ResourceModel<T>> {
   constructor(
@@ -126,8 +139,12 @@ export abstract class ResourceService<T extends ResourceModel<T>> {
 
 Hooray! We made it to the end! :raised_hands:
 
-I hope you enjoyed this article and wil make your applications' code even more generic and reusable following the DRY principle. Also, I hope to use this article not only for the CRUD feature but whenever it's possible in your apps by using generics.
+I hope you enjoyed this series of article and you will make your applications' code even more generic and reusable following the DRY principle. Also, I hope to use this article not only for the CRUD feature but whenever it's possible in your apps by using generics.
 
-Please support this article with your :heart: :unicorn: :bookmark: to help it spread to a wider audience. :pray:
+Please support this article (and the previous parts) with your :heart: :unicorn: :bookmark: to help it spread to a wider audience. :pray:
 
 Also, don’t hesitate to contact me if you have any questions leaving here your comments or Twitter DMs [@nikosanif](https://twitter.com/nikosanif).
+
+Author: Nikos Anifantis ✍️
+
+[![Twitter](https://img.shields.io/twitter/url/https/twitter.com/nikosanif.svg?style=social&label=Follow%20nikosanif)](https://twitter.com/nikosanif) [![LinkedIn](https://img.shields.io/badge/LinkedIn-blue?style=social&style=flat&logo=linkedin&labelColor=blue&label=Connect%20Nikos%20Anifantis)](https://www.linkedin.com/in/nikosanifantis/)
