@@ -13,6 +13,7 @@ A repository for storing personal articles/posts.
 | Create Promises with Timeout Error in Typescript                    | 26 Jun 2021      | [Link](https://dev.to/nikosanif/create-promises-with-timeout-error-in-typescript-fmm)                |
 | Generic CRUD Service in Angular: Part 1 - Understanding Generics    | 5 Oct 2021       | [Link](https://dev.to/nikosanif/generic-crud-service-in-angular-part-1-understanding-generics-2n75)  |
 | Generic CRUD Service in Angular: Part 2 - What is CRUD?             | 9 Oct 2021       | [Link](https://dev.to/nikosanif/generic-crud-service-in-angular-part-2-what-is-crud-30ek)            |
+| Generic CRUD Service in Angular: Part 3 - Generic CRUD Model        | 12 Oct 2021      | [Link](https://dev.to/nikosanif/generic-crud-service-in-angular-part-3-generic-crud-model-2hl)       |
 
 ## Author: Nikos Anifantis ✍️
 
