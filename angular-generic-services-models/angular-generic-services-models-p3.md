@@ -7,7 +7,7 @@ This article is a part of a series about how to create **Generic CRUD Service & 
 - [Part 1 - Understanding Generics](https://dev.to/nikosanif/generic-crud-service-in-angular-part-1-understanding-generics-2n75)
 - [Part 2 - What is CRUD?](https://dev.to/nikosanif/generic-crud-service-in-angular-part-2-what-is-crud-30ek)
 - :point_right: **Part 3 - Generic CRUD Model**
-- Part 4 - Generic CRUD Service in Angular _(coming soon...)_
+- [Part 4 - Generic CRUD Service in Angular](https://dev.to/nikosanif/generic-crud-service-in-angular-part-4-3neo)
 
 ## Generic CRUD Model
 
@@ -70,7 +70,7 @@ const johnDoeAsJSON = johnDoe.toJSON();
 
 ## What's next?
 
-- **Part 4 - Generic CRUD Service in Angular** _(coming soon...)_
+- **[Part 4 - Generic CRUD Service in Angular](https://dev.to/nikosanif/generic-crud-service-in-angular-part-4-3neo)**
 
 Author: Nikos Anifantis ✍️
 

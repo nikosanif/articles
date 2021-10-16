@@ -7,7 +7,7 @@ This article is a part of a series about how to create **Generic CRUD Service & 
 - :point_right: **Part 1 - Understanding Generics**
 - [Part 2 - What is CRUD?](https://dev.to/nikosanif/generic-crud-service-in-angular-part-2-what-is-crud-30ek)
 - [Part 3 - Generic CRUD Model](https://dev.to/nikosanif/generic-crud-service-in-angular-part-3-generic-crud-model-2hl)
-- Part 4 - Generic CRUD Service in Angular _(coming soon...)_
+- [Part 4 - Generic CRUD Service in Angular](https://dev.to/nikosanif/generic-crud-service-in-angular-part-4-3neo)
 
 ## Introduction
 
