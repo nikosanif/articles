@@ -20,7 +20,7 @@ In this article, we assume that all models have some common properties like `id`
 Thus, we create a generic abstract class that contains all these common properties.
 Also we used the generic `T` type to identify the model that we are going to extend.
 
-Last but not least, the class is going to apply logic in the constructor about property casting and provide a common method `toJSON()` which allows us to return a pure JSON based on the instance.
+Last but not least, the class is going to apply logic in the constructor about property casting and provide a common method `toJson()` which allows us to return a pure JSON based on the instance.
 
 Below we can see the full implementation of the generic CRUD model:
 
@@ -42,7 +42,7 @@ export abstract class ResourceModel<T> {
     }
   }
 
-  public toJSON(): any {
+  public toJson(): any {
     return JSON.parse(JSON.stringify(this));
   }
 }
@@ -65,7 +65,7 @@ export class User extends ResourceModel<User> {
 
 // ------ example ------
 const johnDoe = new User({ firstName: 'John', lastName: 'Doe', ... });
-const johnDoeAsJSON = johnDoe.toJSON();
+const johnDoeAsJSON = johnDoe.toJson();
 ```
 
 ## What's next?

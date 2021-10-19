@@ -31,12 +31,12 @@ Great, let’s create our methods step by step now.
 
 The `create()` method accepts a partial model as argument and returns the created model from server. We say "partial" because before we create the resource, some properties are not available (e.g. `id`, `createdAt`, etc). Also, it converts the result to an instance of model's class.
 
-> **TIP:** All methods try to create instances of model's class in order to apply and benefit extra functionality from them (e.g. convert string dates to actual `Date` in constructor or for future usage of their methods such as `toJSON()` function).
+> **TIP:** All methods try to create instances of model's class in order to apply and benefit extra functionality from them (e.g. convert string dates to actual `Date` in constructor or for future usage of their methods such as `toJson()` function).
 
 ```ts
-public create(resource: Partial<T> & { toJSON: () => T }): Observable<T> {
+public create(resource: Partial<T> & { toJson: () => T }): Observable<T> {
   return this.httpClient
-    .post<T>(`${this.apiUrl}`, resource.toJSON())
+    .post<T>(`${this.apiUrl}`, resource.toJson())
     .pipe(map((result) => new this.tConstructor(result)));
 }
 ```
@@ -70,9 +70,9 @@ public getById(id: number): Observable<T> {
 When we want to update an existing resource, we'll use the `update()` method. It accepts a partial model (e.g. only properties that we want to update) and returns the updated instance as `Observable`.
 
 ```ts
-public update(resource: Partial<T> & { toJSON: () => T }): Observable<T> {
+public update(resource: Partial<T> & { toJson: () => T }): Observable<T> {
   return this.httpClient
-    .put<T>(`${this.apiUrl}/${resource._id}`, resource.toJSON())
+    .put<T>(`${this.apiUrl}/${resource.id}`, resource.toJson())
     .pipe(map((result) => new this.tConstructor(result)));
 }
 ```
@@ -105,9 +105,9 @@ export abstract class ResourceService<T extends ResourceModel<T>> {
     protected apiUrl: string
   ) {}
 
-  public create(resource: Partial<T> & { toJSON: () => T }): Observable<T> {
+  public create(resource: Partial<T> & { toJson: () => T }): Observable<T> {
     return this.httpClient
-      .post<T>(`${this.apiUrl}`, resource.toJSON())
+      .post<T>(`${this.apiUrl}`, resource.toJson())
       .pipe(map((result) => new this.tConstructor(result)));
   }
 
@@ -123,9 +123,9 @@ export abstract class ResourceService<T extends ResourceModel<T>> {
       .pipe(map((result) => new this.tConstructor(result)));
   }
 
-  public update(resource: Partial<T> & { toJSON: () => T }): Observable<T> {
+  public update(resource: Partial<T> & { toJson: () => T }): Observable<T> {
     return this.httpClient
-      .put<T>(`${this.apiUrl}/${resource._id}`, resource.toJSON())
+      .put<T>(`${this.apiUrl}/${resource.id}`, resource.toJson())
       .pipe(map((result) => new this.tConstructor(result)));
   }
 
@@ -134,6 +134,30 @@ export abstract class ResourceService<T extends ResourceModel<T>> {
   }
 }
 ```
+
+Finally, here a working example of users' service:
+
+```ts
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+
+import { User } from 'your-path-to-user-model';
+import { ResourceService } from 'your-path-to-resource-service';
+
+@Injectable({ providedIn: 'root' })
+export class UsersService extends ResourceService<User> {
+  constructor(private http: HttpClient) {
+    super(http, User, `your-api-of-users-here`);
+  }
+}
+```
+
+**You can find the final source code in stackblitz:**
+
+<!-- custom tag to embed stackblitz -->
+<!-- https://stackblitz.com/edit/angular-ivy-spjlcf -->
+
+{% stackblitz angular-ivy-spjlcf %}
 
 ## Conclusion :white_check_mark:
 
