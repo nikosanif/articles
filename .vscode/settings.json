@@ -5,7 +5,8 @@
     "dev-tools",
     "angular-subscriptions",
     "timeout-promise",
-    "angular-generic-services-models"
+    "angular-generic-services-models",
+    "angular-authentication"
   ],
   "editor.codeActionsOnSave": {
     "source.fixAll.markdownlint": false
