@@ -16,6 +16,7 @@ A repository for storing personal articles/posts.
 | Generic CRUD Service in Angular: Part 3 - Generic CRUD Model        | 12 Oct 2021      | [Link](https://dev.to/nikosanif/generic-crud-service-in-angular-part-3-generic-crud-model-2hl)       | -                                                                                                                |
 | Generic CRUD Service in Angular: Part 4                             | 16 Oct 2021      | [Link](https://dev.to/nikosanif/generic-crud-service-in-angular-part-4-3neo)                         | [Link](https://nikosanif.medium.com/generic-crud-service-models-in-angular-7122fcd6082b)                         |
 | Angular Authentication: Best Practices 🏆                           | 11 Nov 2021      | [Link](https://dev.to/nikosanif/angular-authentication-best-practices-3h8h)                          | [Link](https://nikosanif.medium.com/angular-authentication-best-practices-c9ae090f1bc0)                          |
+| Angular Authentication: Upgrade to Angular 18 🚀                    | 18 Jun 2024      | [Link](https://dev.to/nikosanif/angular-authentication-upgrade-to-angular-18-382h)                   | [Link](https://nikosanif.medium.com/angular-authentication-upgrade-to-angular-18-46489184b40f)                   |
 
 ## Author: Nikos Anifantis ✍️
 

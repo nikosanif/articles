@@ -9,7 +9,7 @@
     "angular-authentication"
   ],
   "editor.codeActionsOnSave": {
-    "source.fixAll.markdownlint": false
+    "source.fixAll.markdownlint": "never"
   },
   "markdownlint.config": {
     "MD026": false,
@@ -30,5 +30,8 @@
     "statusBar.background": "#323ebe",
     "statusBarItem.hoverBackground": "#2933a1",
     "statusBar.foreground": "#e7e7e7"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   }
 }
